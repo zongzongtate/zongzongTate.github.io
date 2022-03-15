@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="数据结构大作业大二下的其中一个长期任务。ddl是2022年4月20日。 作业内容在诸多项目中选取一项。并根据要求完成项目的开发。 我们是一个二人小组，选取的项目是疫情模拟。 作业要求 疫情模拟系统介绍：新冠疫情肆虐下，各国采取不同的防疫策略，得到了不同的防疫效果。现就不同种类的防疫策略进行疫情模拟，完成以下（不限于）功能：  初始状态设置。用图形界面完成，人群总数不小于1000，有家庭、封闭公共场">
+  
+  
+  <title>数据结构作业记录#1 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>zongzongtate</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数据结构作业记录#1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-15 00:00" pubdate>
+        2022年3月15日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      6 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据结构作业记录#1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="数据结构大作业"><a href="#数据结构大作业" class="headerlink" title="数据结构大作业"></a>数据结构大作业</h1><p>大二下的其中一个长期任务。ddl是2022年4月20日。</p>
+<h2 id="作业内容"><a href="#作业内容" class="headerlink" title="作业内容"></a>作业内容</h2><p>在诸多项目中选取一项。并根据要求完成项目的开发。</p>
+<p>我们是一个二人小组，选取的项目是疫情模拟。</p>
+<h2 id="作业要求"><a href="#作业要求" class="headerlink" title="作业要求"></a>作业要求</h2><blockquote>
+<h3 id="疫情模拟系统"><a href="#疫情模拟系统" class="headerlink" title="疫情模拟系统"></a>疫情模拟系统</h3><p>介绍：新冠疫情肆虐下，各国采取不同的防疫策略，得到了不同的防疫效果。现就不同种类的防疫策略进行疫情模拟，完成以下（不限于）功能：</p>
+<ul>
+<li>初始状态设置。<br>用图形界面完成，人群总数不小于1000，有家庭、封闭公共场所（模拟商场、影院、教室等）、开放空间、医院、疫情隔离区。初始参数包括：Rt传染指数，流动指数，0代病人数量，隔离速度等等。</li>
+<li>不同防疫策略下疫情的发展过程展示。其中，防御策略可分为：<blockquote>
+<p> （1）完全开放。基本上不加任何管控，也基本不接种疫苗。</p>
+<p> （2）疫苗接种+基本不管控。号召人群接种疫苗，但对公众出行活动基本不管控。期望随着疫苗接种率的提升，疫情得到控制。</p>
+<p> （3）疫苗接种+公共场所适度管控。在加大疫苗接种的同时，对公众场所和人群出行进行适度管控，比如中小学停课，娱乐场所部分关闭，以及呼吁人群带口罩及消毒。</p>
+<p> （4）疫苗接种+公共场所适度管控+零容忍。除了（3）的措施以外，严格执行“零容忍”，只要发现病人，立即隔离，并做好密接者排查和区域大排查。</p>
+<p>要求对以上四种防疫策略，模拟随时间推移的疫情传播情况。除动态图形化模拟外，还应该有动态统计结果，包括：正常人数、患病人数、隔离人数、死亡人数、疫苗接种率……</p>
+</blockquote>
+</li>
+<li>做四种防疫策略的对比，用图表等方式进行对比，并得出结论。</li>
+</ul>
+</blockquote>
+<h3 id="作业开发工具与环境"><a href="#作业开发工具与环境" class="headerlink" title="作业开发工具与环境"></a>作业开发工具与环境</h3><p>工具:   <code>Qt Creator</code></p>
+<p>环境:   <code>Qmake version 3.1. using Qt5.12.10</code></p>
+<p>编译器: <code>MSVC-2017-32/64-bit </code></p>
+<p>版本控制：<code>git</code></p>
+<h3 id="仓库地址"><a href="#仓库地址" class="headerlink" title="仓库地址"></a>仓库地址</h3><p><a target="_blank" rel="noopener" href="https://gitee.com/zongzongtate/data-struct-homework">地址</a></p>
+<blockquote>
+<p>暂时还是私密仓库。 <strong>——2022.3.15</strong></p>
+</blockquote>
+<h3 id="开发日志"><a href="#开发日志" class="headerlink" title="开发日志"></a>开发日志</h3><blockquote>
+<p>Tips：截止至2022.3.15</p>
+</blockquote>
+<p>2022.2.23</p>
+<ul>
+<li>仓库初始化。</li>
+<li>添加说明和注意事项。</li>
+<li>添加作业要求。</li>
+</ul>
+<p>2022.2.24</p>
+<ul>
+<li>项目创建。</li>
+<li>新增Human类。</li>
+<li>实现了简单的移动。</li>
+<li>基于QPainter类和TimerEvent函数实现了人类可视化。</li>
+<li>修改了注意事项。</li>
+</ul>
+<p>2022.2.28</p>
+<ul>
+<li>新增Area类。</li>
+<li>基于QPainter类和TimerEvent函数实现了区域可视化。</li>
+<li>基本区域的可视化。</li>
+<li>基于QLabel类，给区域打上对应的名字标签。</li>
+<li>新增AreaPainter类。将Area类实例的可视化封装进入AreaPainter类中。</li>
+<li>将一部分硬编码改为常数表示。</li>
+<li>新增Vec2类。用于表示坐标。</li>
+<li>新增Area类的开放和封锁状态和对应函数。</li>
+</ul>
+<p>2022.3.2</p>
+<ul>
+<li>新增可视化的区域</li>
+<li>修改了移动算法。使移动更加自然。</li>
+<li>更改枚举变量表示。由于报错，将enum设置的若干个状态改为const int来定义。如果能解决错误，会在后续的更新中改回。</li>
+<li>修改了Human类的可视化绘画逻辑。节省了内存开销。</li>
+</ul>
+<p>2022.3.6</p>
+<ul>
+<li>规范注释。</li>
+<li>新增TimeController类的抽象模型。用于控制模拟中的时间。</li>
+</ul>
+<p>2022.3.7</p>
+<ul>
+<li>新增待办列表。</li>
+<li>新增Model类。提供参数设置和调用的API。</li>
+<li>新增可视化区域。</li>
+<li>更改Model类为单例模式。</li>
+</ul>
+<p>2022.3.8</p>
+<ul>
+<li>新增开始窗口。</li>
+<li>补全注释。</li>
+</ul>
+<p>2022.3.9</p>
+<ul>
+<li>Model类添加成员。接收Human实例数目。</li>
+<li>新增开始窗口的参数设置控件。</li>
+<li>删除Human类中的感染函数。新增InfectedChecker类，控制Human实例之间的感染。</li>
+<li>新增Human类的状态判断，根据Human实例的状态而改变可视化颜色。</li>
+<li>将测试用硬编码改为Model类表示。</li>
+<li>完成了TimeController类的实现。</li>
+</ul>
+<p>2022.3.10</p>
+<ul>
+<li>新增简单的隔离效果。</li>
+<li>新增Human类中简单的职业区分。</li>
+<li>新增Human类中职业的行动模型。</li>
+<li>完善感染算法。</li>
+<li>完善开始界面。</li>
+</ul>
+<p>2022.3.14</p>
+<ul>
+<li>新增Human类的潜伏状态。</li>
+<li>修复了几个bug</li>
+<li>新增大路区域，使感染的逻辑性更强。</li>
+<li>新增InfectedChecker类的人数统计。可以返回当前感染人数和潜伏期人数。</li>
+<li>修改了时间计数</li>
+<li>新增图表统计功能。</li>
+<li>优化了图表坐标的设置</li>
+<li>重构区域可视化算法</li>
+</ul>
+<p>2022.3.15</p>
+<ul>
+<li>重构了人类可视化算法。新增HumanPainter类，将Human类的可视化功能封装进HumanPainter类中。</li>
+<li>重构图表统计算法。新增InfectedChart类，将图表功能封装进InfectedChart类中。</li>
+<li>补全注释</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/15/restart/">
+                        <span class="hidden-mobile">重新开始</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
