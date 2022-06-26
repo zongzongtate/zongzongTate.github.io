@@ -251,7 +251,7 @@ hide:hover {
 <p>海明码纠错原理：<hide>跟CRC类似。对于m位码字，检验位数要求 2<sup>r</sup> &gt;&#x3D; m+r+1 其中r为校验位。而后校验位放置在1 2 4 8 16 ……位上，将对应位的数据计算并记录。接收方验证时重新计算并验证即可。错误位是校验位加起来的和。</p>
 <p>OSPF的五种报文：<hide>hello、DD、LSR、LSU、LSAck。</p>
 <p>OSPF里的LSA：<hide>链路状态报告，列出了路由器的链路或接口，并指明它们的状态和沿每条链路方向出站的开销，以及该链路上所有已知的OSPF邻居。</p>
-<p>OSPF里报文的作用：<hide>对应上述的顺序。发现、协商、维护（周期）OSPF邻居；数据库描述，携带LSA摘要；请求缺少的LSA；携带LSA信息的报文</p>
+<p>OSPF里报文的作用：<hide>对应上述的顺序。发现、协商、维护（周期）OSPF邻居；数据库描述，携带LSA摘要；请求缺少的LSA；携带LSA信息的报文；确认收到LSU的报文，也携带了LSA摘要。</p>
 <p>OSPF里的七种状态：<hide>down（机器启动）、init（初始）、2-way（双向）、exstart（准启动）、exchange（交换）、loading（装载）、full（完全毗邻）按顺序就是一般的状态变换顺序</p>
 <p>将mac地址转换为eui-64地址：<hide>1、在mac地址中间插入0xFFFE，形成64位。2、将第一字节的第7位反转。例：00-AA-00-3F-2A-1C -&gt; 00-AA-00-FF-FE-3F-2A-1C -&gt; 02-AA-00-FF-FE-3F-2A-1C -&gt; 2AA:FF:FE3F:2A1C</p>
 <p>网桥工作原理：<hide>泛洪、学习、转发、过滤</p>
