@@ -16,10 +16,10 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="hide {   background-color: #d6d6d6;   color: #d6d6d6; } hide:hover {   background-color: white;   color: black; }    0# 计算机网络复习记录（试卷篇）  内容杂乱无章却没有严格的顺序，仅用于个人复习记录  本校考试中的题目总结 仅针对本校复习网站给出的卷子  问题不分类了。直接按">
+    <meta name="description" content="6.29下午考试，很急了。 想白兰，但条件不允许。 单纯形法解线性规划 仅讲述大致思路   化为标准型。如下图    选定基变量。有几个等式就有几个基变量。 得出初始可行解。 根据目标函数的系数做出基入基操作。 得出新的可行解。 观察目标函数的各项系数，重复4、5，直到检验数（目标函数经过变基后的项系数）都小于等于0 此时的可行解即为最优解  各种特殊情况：  若检验数的某项为0，说明有无穷解。">
   
   
-  <title>大二下期末复习-计算机网络#2（试卷） - Hexo</title>
+  <title>大二下期末复习-算法#1（线性规划和递归树） - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="大二下期末复习-计算机网络#2（试卷）">
+            <span class="h2" id="subtitle" title="大二下期末复习-算法#1（线性规划和递归树）">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-06-26 00:00" pubdate>
-        2022年6月26日 凌晨
+      <time datetime="2022-06-29 00:00" pubdate>
+        2022年6月29日 凌晨
       </time>
     </span>
   
@@ -186,7 +186,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      820 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      3 分钟
     </span>
   
 
@@ -224,57 +224,56 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">大二下期末复习-计算机网络#2（试卷）</h1>
+            <h1 style="display: none">大二下期末复习-算法#1（线性规划和递归树）</h1>
             
             <div class="markdown-body">
-              <style>
-hide {
-  background-color: #d6d6d6;
-  color: #d6d6d6;
-}
-hide:hover {
-  background-color: white;
-  color: black;
-}
-</style>
-
-
-<p>0# 计算机网络复习记录（试卷篇）</p>
-<blockquote>
-<p>内容杂乱无章却没有严格的顺序，仅用于个人复习记录</p>
+              <p>6.29下午考试，很急了。</p>
+<p>想白兰，但条件不允许。</p>
+<h2 id="单纯形法解线性规划"><a href="#单纯形法解线性规划" class="headerlink" title="单纯形法解线性规划"></a><strong>单纯形法解线性规划</strong></h2><blockquote>
+<p>仅讲述大致思路</p>
 </blockquote>
-<h2 id="本校考试中的题目总结"><a href="#本校考试中的题目总结" class="headerlink" title="本校考试中的题目总结"></a>本校考试中的题目总结</h2><blockquote>
-<p>仅针对本校复习网站给出的卷子</p>
+<ol>
+<li>化为标准型。如下图</li>
+</ol>
+<p><img src="/image/algorithm1/1656432963243.png" srcset="/img/loading.gif" lazyload alt="标准型图"></p>
+<ol start="2">
+<li>选定基变量。有几个等式就有几个基变量。</li>
+<li>得出初始可行解。</li>
+<li>根据目标函数的系数做出基入基操作。</li>
+<li>得出新的可行解。</li>
+<li>观察目标函数的各项系数，重复4、5，直到检验数（目标函数经过变基后的项系数）都小于等于0</li>
+<li>此时的可行解即为最优解</li>
+</ol>
+<p>各种特殊情况：</p>
+<ul>
+<li>若检验数的某项为0，说明有无穷解。</li>
+<li>退化问题。没有深入理解。但解决办法应该是保证基变量不能取0。因为保证单纯形法收敛的充分条件是：在迭代过程中的每个基本可行解的基变量数值都严格大于0。<del>看着来，我不是很会</del></li>
+<li>某个决策变量的系数都小于0。代表这个区间无穷大。<del>但其实我也不知道无穷大意味着什么，无解吗</del></li>
+<li>对于小于0的决策变量，用他的相反数来替代。</li>
+<li>确定初始基本可行解。对于原问题的约束已经是标准型但没有基变量，可以人工添加变量作为基变量，随后进行入基出基操作，若最后的最优解中仍有人工添加的变量则代表无解。</li>
+</ul>
+<p>大致如上，可能有些许差错，自行判断。<del>真的很想摆</del></p>
+<h2 id="递归树"><a href="#递归树" class="headerlink" title="递归树"></a><strong>递归树</strong></h2><blockquote>
+<p>已经自己学习了无数次的内容，但是总是很快就忘掉了。再总结一次</p>
 </blockquote>
-<p>问题不分类了。直接按试卷顺序列出。</p>
-<p>CDMA工作原理：<hide>码分多址。不分频道、时隙。信息传输靠不同的码型。操作起来就是将站点的芯片序列中的1变+1，0变-1，得到站点序列。当获得某个序列时，通过该序列和站点序列进行笛卡尔积操作即可获取到站点发送的信息。</p>
-<p>海明码纠错原理：<hide>跟CRC类似。对于m位码字，检验位数要求 2<sup>r</sup> &gt;&#x3D; m+r+1 其中r为校验位。而后校验位放置在1 2 4 8 16 ……位上，将对应位的数据计算并记录。接收方验证时重新计算并验证即可。错误位是校验位加起来的和。</p>
-<p>OSPF的五种报文：<hide>hello、DD、LSR、LSU、LSAck。</p>
-<p>OSPF里的LSA：<hide>链路状态报告，列出了路由器的链路或接口，并指明它们的状态和沿每条链路方向出站的开销，以及该链路上所有已知的OSPF邻居。</p>
-<p>OSPF里报文的作用：<hide>对应上述的顺序。发现、协商、维护（周期）OSPF邻居；数据库描述，携带LSA摘要；请求缺少的LSA；携带LSA信息的报文；确认收到LSU的报文，也携带了LSA摘要。</p>
-<p>OSPF里的七种状态：<hide>down（机器启动）、init（初始）、2-way（双向）、exstart（准启动）、exchange（交换）、loading（装载）、full（完全毗邻）按顺序就是一般的状态变换顺序</p>
-<p>将mac地址转换为eui-64地址：<hide>1、在mac地址中间插入0xFFFE，形成64位。2、将第一字节的第7位反转。例：00-AA-00-3F-2A-1C -&gt; 00-AA-00-FF-FE-3F-2A-1C -&gt; 02-AA-00-FF-FE-3F-2A-1C -&gt; 2AA:FF:FE3F:2A1C</p>
-<p>网桥工作原理：<hide>泛洪、学习、转发、过滤</p>
-<p>万维网由哪三部分组成：<hide>Url、http、html</p>
-<p>IPv6头部有但IPv4头部没有的域：<hide>流标签</p>
-<p>OSI参考模型的最上层：<hide>应用层</p>
-<p>带宽和吞吐量的基本单位：<hide>bps</p>
-<p>TCP段头中的窗口数大小怎么决定：<hide>拥塞窗口和接受方允许的窗口共同决定。取最小值。</p>
-<p>BGP协议是什么：<hide>距离矢量路由选择协议。且克服了路由自环问题</p>
-<p>回退n帧的信道利用率高还是选择性重传高：<hide>选择性重传</p>
-<p>PSTN（公共交换电话网）组成部分：<hide>电话、端局、干线</p>
-<p>现代电话系统的核心是：<hide>PCM</p>
-<p>电话系统的时间间隔：<hide>125μs</p>
-<p>RIP的度量：<hide>跳数</p>
-<p>会增大冲突域的设备：<hide>集线器</p>
-<p>广播地址和网络地址的特征：<hide>广播：主机位全1，网络：主机位全0</p>
-<p>D类地址的子网掩码：<hide>D类地址是广播地址，没有子网掩码，没有缺省网关</p>
-<p>如何判断ip地址是否合法：<hide>1、看是否是A、B、C类地址。2、看是否是回环地址（127开头）。3、看是否有超过256的数字出现。4、看网络位</p>
-<p>OSPF的度量：<hide>带宽</p>
-<p>抗电磁干扰的传输介质：<hide>光纤</p>
-<p>从未通信过的主机的通信步骤：<hide>封装、arp请求、信息发送、mac寻址到第一个路由器、到达对应子网、mac寻址、信息到达、解封装</p>
-<p>调制器调试方法：<hide>同相调幅、同幅调频</p>
-<p>tcp数据段最大长度为65535，为什么最大载荷只有65495：<hide>tcp要封装进ip分组，ip分组的最大载荷只有65515，tcp数据段最小段头还有20，所以最大载荷是65495</p>
+<p>从一个例子入手也许会更容易理解和记忆</p>
+<p>比如这个例子<strong>T(n) &#x3D; T(n&#x2F;3) + T(2n&#x2F;3) + n</strong></p>
+<p>方程右部的两项不一样，无法合并。递归迭代法不行（<del>已经忘记了递归迭代法，但好像不考</del>），递归树行</p>
+<p>直接进行一个递归树的看。</p>
+<p><img src="/image/algorithm1/1656434478658.png" srcset="/img/loading.gif" lazyload alt="1656434478658"></p>
+<p>设这棵树的层数为k</p>
+<p>这不是一棵平衡树，我们直接用最高层代表k。每一层都会变成上一层的2&#x2F;3。</p>
+<p>有n*(2&#x2F;3)<sup>k</sup>&#x3D;1，因为到达最底层的时候，叶子节点对应的数为1。可得k&#x3D;log<sub>3&#x2F;2</sub>n</p>
+<p>又可以得出，每层的复杂度都是O（n），<del>每一层都是Cn，C是常熟</del></p>
+<p>因此T（n）&#x3D;kO（n）&#x3D;log<sub>3&#x2F;2</sub>nO(n)&#x3D;O(nlogn)</p>
+<p>关键点：</p>
+<ul>
+<li>层数</li>
+<li>每层的复杂度（或者说是和）</li>
+</ul>
+<p><del>感觉不难，就是容易忘</del></p>
+<p>最后贴个图来方便理解吧</p>
+<p><img src="/image/algorithm1/1656435873274.png" srcset="/img/loading.gif" lazyload alt="1656435873274"></p>
 
             </div>
             <hr>
@@ -309,18 +308,12 @@ hide:hover {
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/29/algorithm1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大二下期末复习-算法#1（线性规划和递归树）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/25/net1/">
-                        <span class="hidden-mobile">大二下期末复习-计算机网络#1（试卷）</span>
+                      <a href="/2022/06/26/net2/">
+                        <span class="hidden-mobile">大二下期末复习-计算机网络#2（试卷）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
