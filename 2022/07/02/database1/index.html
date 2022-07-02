@@ -16,10 +16,10 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="6.29下午考试，很急了。 想白兰，但条件不允许。 单纯形法解线性规划 仅讲述大致思路   化为标准型。如下图。    选定基变量。有几个等式就有几个基变量。 得出初始可行解。 根据目标函数的系数做出基入基操作。 得出新的可行解。 观察目标函数的各项系数，重复4、5，直到检验数（目标函数经过变基后的项系数）都小于等于0 此时的可行解即为最优解  各种特殊情况：  若检验数的某项为0，说明有无穷解。">
+    <meta name="description" content="本文的内容全部基于我校老师所发的数据库复习提纲 一、概述1、E-R图的表示方法  矩形框表示实体 椭圆框表示属性 实心线段连接实体与属性 菱形框表示实体之间的联系  2、实体之间的联系形式  一对一（1 1） 一对多（1 n） 多对多（m n）  3、理解概念模型、逻辑模型、物理模型  概念模型：现实世界到机器世界的一个中间层次。现实世界到信息世界的第一层抽象，用于信息世界的建模 逻辑模型：一种图">
   
   
-  <title>大二下期末复习-算法#1（线性规划和递归树） - Hexo</title>
+  <title>数据库#1 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="大二下期末复习-算法#1（线性规划和递归树）">
+            <span class="h2" id="subtitle" title="数据库#1">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-06-29 00:00" pubdate>
-        2022年6月29日 凌晨
+      <time datetime="2022-07-02 00:00" pubdate>
+        2022年7月2日 凌晨
       </time>
     </span>
   
@@ -186,7 +186,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      821 字
+      1.1k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      4 分钟
     </span>
   
 
@@ -224,56 +224,81 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">大二下期末复习-算法#1（线性规划和递归树）</h1>
+            <h1 style="display: none">数据库#1</h1>
             
             <div class="markdown-body">
-              <p>6.29下午考试，很急了。</p>
-<p>想白兰，但条件不允许。</p>
-<h2 id="单纯形法解线性规划"><a href="#单纯形法解线性规划" class="headerlink" title="单纯形法解线性规划"></a><strong>单纯形法解线性规划</strong></h2><blockquote>
-<p>仅讲述大致思路</p>
-</blockquote>
-<ol>
-<li>化为标准型。如下图。</li>
-</ol>
-<p><img src="/image/algorithm1/1656432963243.png" srcset="/img/loading.gif" lazyload alt="标准型图"></p>
-<ol>
-<li>选定基变量。有几个等式就有几个基变量。</li>
-<li>得出初始可行解。</li>
-<li>根据目标函数的系数做出基入基操作。</li>
-<li>得出新的可行解。</li>
-<li>观察目标函数的各项系数，重复4、5，直到检验数（目标函数经过变基后的项系数）都小于等于0</li>
-<li>此时的可行解即为最优解</li>
-</ol>
-<p>各种特殊情况：</p>
+              <p>本文的内容全部基于我校老师所发的数据库复习提纲</p>
+<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a><strong>一、概述</strong></h2><p>1、E-R图的表示方法</p>
 <ul>
-<li>若检验数的某项为0，说明有无穷解。</li>
-<li>退化问题。没有深入理解。但解决办法应该是保证基变量不能取0。因为保证单纯形法收敛的充分条件是：在迭代过程中的每个基本可行解的基变量数值都严格大于0。<del>看着来，我不是很会</del></li>
-<li>某个决策变量的系数都小于0。代表这个区间无穷大。<del>但其实我也不知道无穷大意味着什么，无解吗</del></li>
-<li>对于小于0的决策变量，用他的相反数来替代。</li>
-<li>确定初始基本可行解。对于原问题的约束已经是标准型但没有基变量，可以人工添加变量作为基变量，随后进行入基出基操作，若最后的最优解中仍有人工添加的变量则代表无解。</li>
+<li>矩形框表示实体</li>
+<li>椭圆框表示属性</li>
+<li>实心线段连接实体与属性</li>
+<li>菱形框表示实体之间的联系</li>
 </ul>
-<p>大致如上，可能有些许差错，自行判断。<del>真的很想摆</del></p>
-<h2 id="递归树"><a href="#递归树" class="headerlink" title="递归树"></a><strong>递归树</strong></h2><blockquote>
-<p>已经自己学习了无数次的内容，但是总是很快就忘掉了。再总结一次</p>
-</blockquote>
-<p>从一个例子入手也许会更容易理解和记忆</p>
-<p>比如这个例子<strong>T(n) &#x3D; T(n&#x2F;3) + T(2n&#x2F;3) + n</strong></p>
-<p>方程右部的两项不一样，无法合并。递归迭代法不行（<del>已经忘记了递归迭代法，但好像不考</del>），递归树行</p>
-<p>直接进行一个递归树的看。</p>
-<p><img src="/image/algorithm1/1656434478658.png" srcset="/img/loading.gif" lazyload alt="递归树"></p>
-<p>设这棵树的层数为k</p>
-<p>这不是一棵平衡树，我们直接用最高层代表k。每一层都会变成上一层的2&#x2F;3。</p>
-<p>有n*(2&#x2F;3)<sup>k</sup>&#x3D;1，因为到达最底层的时候，叶子节点对应的数为1。可得k&#x3D;log<sub>3&#x2F;2</sub>n</p>
-<p>又可以得出，每层的复杂度都是O（n），<del>每一层都是Cn，C是常熟</del></p>
-<p>因此T（n）&#x3D;kO（n）&#x3D;log<sub>3&#x2F;2</sub>nO(n)&#x3D;O(nlogn)</p>
-<p>关键点：</p>
+<p>2、实体之间的联系形式</p>
 <ul>
-<li>层数</li>
-<li>每层的复杂度（或者说是和）</li>
+<li>一对一（1 1）</li>
+<li>一对多（1 n）</li>
+<li>多对多（m n）</li>
 </ul>
-<p><del>感觉不难，就是容易忘</del></p>
-<p>最后贴个图来方便理解吧</p>
-<p><img src="/image/algorithm1/1656435873274.png" srcset="/img/loading.gif" lazyload alt="递归树"></p>
+<p>3、理解概念模型、逻辑模型、物理模型</p>
+<ul>
+<li>概念模型：现实世界到机器世界的一个中间层次。现实世界到信息世界的第一层抽象，用于信息世界的建模</li>
+<li>逻辑模型：一种图形化的展现方式，将概念模型具体化。（有层次、网状和关系模型）</li>
+<li>物理模型：描述数据是如何在计算机中存储的，如何表达记录结构、记录顺序、访问路径等信息。将逻辑模型的内容在具体的物理介质上实现。</li>
+</ul>
+<p>4、什么叫数据与程序的物理独立性？什么叫数据与程序的逻辑独立性？为什么数据库系统具有数据与程序的独立性？</p>
+<ul>
+<li>物理独立性：当数据的内模式改变了，即存储结构改变了，只需要管理员对模式&#x2F;内模式英雄做改变就可以保持模式不变。应用程序不必修改。</li>
+<li>逻辑独立性：当模式改变时，如增加关系、属性时，数据库管理员对外模式&#x2F;模式映像做相应改变，就可以保证外模式不变。应用程序不必修改。</li>
+<li>为什么：数据的定义和描述可以从应用程序分离。简化了应用程序的编制，大大减少了应用程序的维护和修改</li>
+</ul>
+<p>5、数据库管理系统的主要管理功能？</p>
+<ul>
+<li>数据组织、存储和管理</li>
+<li>数据操作</li>
+<li>数据库运行管理</li>
+<li>不太清楚所谓的主要管理功能。自行总结如上。定义、保护、维护和通信的功能应该不算管理。自己看着办吧</li>
+</ul>
+<p>6、E-R图绘制</p>
+<ul>
+<li><del>懂得都懂，不懂得我也不好多说什么了</del></li>
+</ul>
+<h2 id="二、关系代数"><a href="#二、关系代数" class="headerlink" title="二、关系代数"></a><strong>二、关系代数</strong></h2><p>1、理解关系代数基本运算</p>
+<ul>
+<li>并</li>
+<li>差</li>
+<li>交</li>
+<li>笛卡尔积</li>
+<li>选择</li>
+<li>投影</li>
+<li>连接</li>
+<li>除运算</li>
+</ul>
+<p>2、关系表有多个候选键，但只能选定其中一个做为主键</p>
+<p>3、投影和选择运算要重点掌握，投影后，元组数量不发生变化，选择后，属性数量不发生变化</p>
+<p>4、理解自然连接、外连接（左、右、全）</p>
+<ul>
+<li>自然连接：一种特殊的等值连接。相等的必须是公共属性,属性名也要相同。会除去重复属性。</li>
+<li>外连接：保留悬浮元组的连接。悬浮元组即俩关系在自然连接时被舍弃的元组。左外保留左边关系的悬浮元组，右外保留右边、全外保留全部</li>
+</ul>
+<p>5、理解主键、外键的概念及关系</p>
+<ul>
+<li>主键：一列或多列的组合，值能唯一标识的每一行，不可为空。保证实体完整性。</li>
+<li>外键：关系间引用时用到。某关系中的码与另一关系（也可以是自己）的主码对应，即为外码（键）。</li>
+<li>关系：外键和其对应的主键可以不同名，但一般同名。此外，外码可取空，但一空全空，表示含义具体分析。</li>
+</ul>
+<p>6、能用关系代数表达对关系表的查询操作</p>
+<ul>
+<li><del>不会的都突突了吧</del></li>
+</ul>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a><strong>SQL</strong></h2><blockquote>
+<p>sql章节所占分数最多</p>
+</blockquote>
+<p>1、要掌握单表查询、多表连接查询、嵌套查询、分组运算、排序、选择、投影等操作。</p>
+<blockquote>
+<p>去吃个饭，回来继续写</p>
+</blockquote>
 
             </div>
             <hr>
@@ -308,18 +333,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/02/database1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据库#1</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/26/net2/">
-                        <span class="hidden-mobile">大二下期末复习-计算机网络#2（试卷）</span>
+                      <a href="/2022/06/29/algorithm1/">
+                        <span class="hidden-mobile">大二下期末复习-算法#1（线性规划和递归树）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
